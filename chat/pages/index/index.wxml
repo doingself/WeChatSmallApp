@@ -1,14 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-      <button type="primary" bindtap='bindViewTap'>发送消息</button>
-  </view>
+
+  <button type="primary" bindtap='connectMqtt'>连接 mqtt</button>
+  <button type="primary" bindtap='publishMqttMsg'>发送 mqtt 消息</button>
+  <button type="primary" bindtap="connectWebsocket" >连接 WebSocket</button>
+  <button type="primary" bindtap="testrequest">request请求</button>
+
 </view>
