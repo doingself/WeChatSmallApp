@@ -8,8 +8,10 @@ let client = null;
 // let serip = "baidu.com";
 // let serip = "10.10.16.69";
 // let serport = 1883;
+// let serip = "test.haha.com";
+// let serport = 443;
 let serip = "test.haha.com";
-let serport = 8080;
+let serport = 443;
 
 Page({
   data: {
@@ -80,7 +82,8 @@ Page({
   connectWebsocket: function () {
     console.log("++++++++ connectWebsocket")
     wx.connectSocket({
-      url: 'wss://test.haha.com:433/mqtt',
+      // url: 'wss://test.haha.com/wss',
+      url: 'ws://127.0.0.1:8080/websocket',
       data: {
       },
       header: {
@@ -106,7 +109,7 @@ Page({
   testrequest: function (e) {
     console.log("++++++++ test request")
     wx.request({
-      url: 'https://test.haha.com:8080/mqtt',
+      url: 'https://test.haha.com/test',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
