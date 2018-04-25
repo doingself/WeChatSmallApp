@@ -1,4 +1,6 @@
-//paho-mqtt.js
+
+// https://github.com/tennessine/paho.mqtt.wxapp
+
 /*******************************************************************************
  * Copyright (c) 2013 IBM Corp.
  *
