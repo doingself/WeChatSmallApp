@@ -82,8 +82,7 @@ Page({
   connectWebsocket: function () {
     console.log("++++++++ connectWebsocket")
     wx.connectSocket({
-      // url: 'wss://test.haha.com/wss',
-      url: 'ws://127.0.0.1:8080/websocket',
+      url: 'ws://127.0.0.1:8080/ssm/websocket.do',
       data: {
       },
       header: {
@@ -109,7 +108,9 @@ Page({
   testrequest: function (e) {
     console.log("++++++++ test request")
     wx.request({
-      url: 'https://test.haha.com/test',
+      // Nginx
+      //url: 'https://test.haha.com/test',
+      url: 'http://127.0.0.1:8080/ssm/aa',
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
