@@ -4,6 +4,8 @@ const app = getApp()
 
 const Paho = require('../../utils/paho-mqtt.js')
 
+const socket = require('../../utils/WebSocket.js');
+
 let client = null;
 // let serip = "baidu.com";
 // let serip = "10.10.16.69";
@@ -81,29 +83,22 @@ Page({
   // MARK: WebSocket
   connectWebsocket: function () {
     console.log("++++++++ connectWebsocket")
-    wx.connectSocket({
-      url: 'ws://127.0.0.1:8080/ssm/websocket.do',
-      data: {
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      method: "GET"
-    })
-    wx.onSocketOpen(function (res) {
-      console.log('WebSocket连接已打开！')
-      console.log(res)
-    })
-    wx.onSocketError(function (res) {
-      console.log('WebSocket连接打开失败，请检查！')
-      console.log(res)
-    })
-    wx.onSocketMessage(function (res) {
-      console.log('WebSocket收到服务器内容：')
-      console.log(res)
-    })
+    // 连接
+    socket.connectSocket();
   },
+  sendWebsocketMsg: function () {
 
+    var jsonObj = { "from": 1, "to": 2, "body": "hello" };
+
+    var jsonStr = JSON.stringify(jsonObj);
+    // var jsonObj = JSON.parse(jsonStr);
+
+    // 发送 socket
+    socket.sendSocketMessage(jsonStr);
+  },
+  closeWebsocket: function(){
+    socket.closeSocketConnect();
+  },
   // MARK: Request
   testrequest: function (e) {
     console.log("++++++++ test request")

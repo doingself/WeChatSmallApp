@@ -1,1 +1,5 @@
 /**index.wxss**/
+
+button{
+  margin: 10rpx auto;
+}

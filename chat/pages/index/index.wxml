@@ -4,6 +4,8 @@
   <button type="primary" bindtap='connectMqtt'>连接 mqtt</button>
   <button type="primary" bindtap='publishMqttMsg'>发送 mqtt 消息</button>
   <button type="primary" bindtap="connectWebsocket" >连接 WebSocket</button>
+  <button type="primary" bindtap="sendWebsocketMsg" >发送 WebSocket 消息</button>
+  <button type="primary" bindtap="closeWebsocket" >关闭 WebSocket</button>
   <button type="primary" bindtap="testrequest">request请求</button>
 
 </view>
