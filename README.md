@@ -2,17 +2,21 @@
 
 ## chat
 
-### WebSocket
+![image](https://github.com/doingself/WeChatSmallApp/blob/master/images/chat0.jpg)
+
+目前已经 WebSocket 消息收发功能
+
+#### WebSocket
 
 基于 WebSocket 实现即时通讯
 
 WebSocket 服务端参考 [我的 GitHub mavenDemo/ssmProject](https://github.com/doingself/mavenDemo)
 
-### request 接口调用
+#### request 接口调用
 
 应用服务器参考 [我的 GitHub mavenDemo/ssmProject](https://github.com/doingself/mavenDemo)
 
-### MQTT (忽略)
+#### MQTT (未能成功连接 Mosquitto 服务器 😂😂😂)
 
 初衷是基于 MQTT 的 Mosquitto 实现即时通讯
 小程序无法成功连接服务器 (或许是我的 Nginx 配置的有问题, 放弃了)
